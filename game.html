@@ -8,9 +8,99 @@
 </head>
 <body>
     <script>
-        function computerPlay() {
-            let random = ["rock", "paper", "scissors"];
+        
+        function getComputerSelection() {
+            let randNum = Math.floor (Math.random()*3);
+            if (randNum==0) {
+                return ("rock");
+            }
+            else if (randNum==1) {
+                return ("paper");
+            }
+            else if (randNum==2) {
+                return ("scissors");
+            }
+            
         }
+        let score = 0;
+        function playRound(playerSelection, computerSelection) {
+            if(playerSelection=="rock" && computerSelection=="rock") {
+                return `Result: TIE   ${playerSelection} vs ${computerSelection}    Score: ${score}`;
+            }else if(playerSelection=="rock" && computerSelection=="scissors") {
+                return `Result: WIN  ${playerSelection} vs ${computerSelection}    Score: ${score += 500}`;
+            }else if(playerSelection=="rock" && computerSelection=="scissors") {
+                return `Result: LOSS   ${playerSelection} vs ${computerSelection}    Score: ${score -=500}`;
+            }else if(playerSelection=="paper" && computerSelection=="paper") {
+                return `Result: TIE   ${playerSelection} vs ${computerSelection}    Score: ${score}`;
+            }else if(playerSelection=="paper" && computerSelection=="rock") {
+                return `Result: WIN  ${playerSelection} vs ${computerSelection}    Score: ${score += 500}`;
+            }else if(playerSelection=="paper" && computerSelection=="scissors") {
+                return `Result: LOSS   ${playerSelection} vs ${computerSelection}    Score: ${score -=500}`;
+            }else if(playerSelection=="scissors" && computerSelection=="scissors") {
+                return `Result: TIE   ${playerSelection} vs ${computerSelection}    Score: ${score}`;
+            }else if(playerSelection=="scissors" && computerSelection=="paper") {
+                return `Result: WIN  ${playerSelection} vs ${computerSelection}    Score: ${score += 500}`;
+            }else if(playerSelection=="scissors" && computerSelection=="rock") {
+                return `Result: LOSS   ${playerSelection} vs ${computerSelection}    Score: ${score -=500}`;
+            }else{
+                console.log("error")
+            }
+            
+        }
+        function gamePlay(){
+            console.log("Round 1 Begin");
+            let sign = prompt("Rock, paper, or scissors?").toLowerCase();
+            let compChoice = getComputerSelection();
+            let results = playRound("rock","rock");
+            console.log(results);
+            console.log("Round 2 Begin");
+            sign = prompt("Rock, paper, or scissors?").toLowerCase();
+            compChoice = getComputerSelection();
+            results = playRound(sign,compChoice);
+            console.log(results);
+            console.log("Round 3 Begin");
+            sign = prompt("Rock, paper, or scissors?").toLowerCase();
+            compChoice = getComputerSelection();
+            results = playRound(sign,compChoice);
+            console.log(results);
+            console.log("Round 4 Begin");
+            sign = prompt("Rock, paper, or scissors?").toLowerCase();
+            compChoice = getComputerSelection();
+            results = playRound(sign,compChoice);
+            console.log(results);
+            console.log("Round 5 Begin");
+            sign = prompt("Rock, paper, or scissors?").toLowerCase();
+            compChoice = getComputerSelection();
+            results = playRound(sign,compChoice);
+            console.log(results);
+            console.log("Round 6 Begin");
+            sign = prompt("Rock, paper, or scissors?").toLowerCase();
+            compChoice = getComputerSelection();
+            results = playRound("rock","rock");
+            console.log(results);
+            console.log("Round 7 Begin");
+            sign = prompt("Rock, paper, or scissors?").toLowerCase();
+            compChoice = getComputerSelection();
+            results = playRound(sign,compChoice);
+            console.log(results);
+            console.log("Round 8 Begin");
+            sign = prompt("Rock, paper, or scissors?").toLowerCase();
+            compChoice = getComputerSelection();
+            results = playRound(sign,compChoice);
+            console.log(results);
+            console.log("Round 9 Begin");
+            sign = prompt("Rock, paper, or scissors?").toLowerCase();
+            compChoice = getComputerSelection();
+            results = playRound(sign,compChoice);
+            console.log(results);
+            console.log("Round 10 Begin");
+            sign = prompt("Rock, paper, or scissors?").toLowerCase();
+            compChoice = getComputerSelection();
+            results = playRound(sign,compChoice);
+            console.log(results);
+            
+        }
+        gamePlay();
     </script>
 </body>
 </html>
